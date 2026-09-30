@@ -6,45 +6,41 @@
 /*** VARIABLES & THEMES ***/
 
 :root {
-  --primary-color: #cf0f0f;
-  --primary-color-contrast: #ffffff;
-  --field-background-color: #000;
+    --primary-color: #cf0f0f;
+    --primary-color-contrast: #ffffff;
+    --field-background-color: #000;
 }
 
 .light-theme {
-  --page-background: linear-gradient(
-    180deg,
-    #ffffff 0%,
-    #ffffff 65%,
-    rgba(255, 255, 255, 0.75) 100%
-  );
-  --header-background-color: #e3e3e3;
-  --highlight-color: #000000;
-  --featured-font-family: "Archivo", sans-serif;
-  --character-top-image-src: url("../images/characters/kids-on-the-bike.svg");
-  --character-top-image-color: #ffffff;
-  --character-bottom-image-src: url("../images/characters/inverted-world-monster.svg");
-  --character-bottom-image-color: #e5e5e5;
-  --background-lamp-image: url("../images/backgrounds/lamps.png");
-  --footer-background-color: #b5bbbf;
+    --page-background: linear-gradient(180deg,
+            #ffffff 0%,
+            #ffffff 65%,
+            rgba(255, 255, 255, 0.75) 100%);
+    --header-background-color: #e3e3e3;
+    --highlight-color: #000000;
+    --featured-font-family: "Archivo", sans-serif;
+    --character-top-image-src: url("../images/characters/kids-on-the-bike.svg");
+    --character-top-image-color: #ffffff;
+    --character-bottom-image-src: url("../images/characters/inverted-world-monster.svg");
+    --character-bottom-image-color: #e5e5e5;
+    --background-lamp-image: url("../images/backgrounds/lamps.png");
+    --footer-background-color: #b5bbbf;
 }
 
 .dark-theme {
-  --page-background: linear-gradient(
-    180deg,
-    #050000 0%,
-    #130404 65%,
-    rgba(19, 1, 1, 0.75) 100%
-  );
-  --header-background-color: #220f0f;
-  --highlight-color: #ffffff;
-  --featured-font-family: "Rubik Glitch", sans-serif;
-  --character-bottom-image-src: url("../images/characters/kids-on-the-bike.svg");
-  --character-bottom-image-color: rgba(255, 255, 255, 0.1);
-  --character-top-image-src: url("../images/characters/inverted-world-monster.svg");
-  --character-top-image-color: #000;
-  --background-lamp-image: url("../images/backgrounds/lamps-inverted.png");
-  --footer-background-color: #000;
+    --page-background: linear-gradient(180deg,
+            #050000 0%,
+            #130404 65%,
+            rgba(19, 1, 1, 0.75) 100%);
+    --header-background-color: #220f0f;
+    --highlight-color: #ffffff;
+    --featured-font-family: "Rubik Glitch", sans-serif;
+    --character-bottom-image-src: url("../images/characters/kids-on-the-bike.svg");
+    --character-bottom-image-color: rgba(255, 255, 255, 0.1);
+    --character-top-image-src: url("../images/characters/inverted-world-monster.svg");
+    --character-top-image-color: #000;
+    --background-lamp-image: url("../images/backgrounds/lamps-inverted.png");
+    --footer-background-color: #000;
 }
 
 /*** GENERIC STYLES ***/
@@ -88,7 +84,7 @@ button {
 
 /*** HEADER STYLES ***/
 
-header{
+header {
     background-color: var(--header-background-color);
     min-height: 850px;
     display: flex;
@@ -164,9 +160,95 @@ header::before {
     -webkit-mask: var(--character-bottom-image-src) bottom / 100% no-repeat;
 }
 
+/*** MAIN STYLES ***/
 main {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/*** SECTION STYLES ***/
+section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 95px;
+}
+
+/*** SECTION 01 - INVERTED WORLD ***/
+.container {
+    max-width: 1200px;
+}
+
+#section-inverted-world {
+    align-items: center;
+}
+
+#section-inverted-world .section-texts {
+    width: 50%;
+}
+
+#section-inverted-world .section-texts h2 {
+    max-width: 300px;
+}
+
+/*** SECTION 02 - STRANGER THINGS TRAILER ***/
+#section-stranger-things-trailer .section-texts {
+    width: 50%;
+    text-align: right;
+}
+
+#section-stranger-things-trailer .section-texts h2 {
+    max-width: 425px;
+    display: inline-block;
+}
+
+#section-stranger-things-trailer .video-frame {
+    background-color: var(--primary-color);
+}
+
+#section-stranger-things-trailer .video-frame iframe {
+    position: relative;
+    bottom: 24px;
+    left: 24px;
+    border: 2px solid;
+    border-image: linear-gradient(var(--primary-color),
+            var(--primary-color-contrast));
+    border-image-slice: 10;
+}
+
+/*** SECTION 03 - STRANGER THINGS GALLERY ***/
+#section-stranger-things-gallery {
+    width: 100%;
+    background: var(--background-lamp-image) 120% / 50% no-repeat;
+    justify-content: center;
+}
+
+#section-stranger-things-gallery .container {
+    width: 100%;
+}
+
+#section-stranger-things-gallery .container h2 {
+    width: 800px;
+}
+
+#section-stranger-things-gallery .gallery-container {
+    display: flex;
+    gap: 50px;
+    padding-left: 20px;
+}
+
+#section-stranger-things-gallery .gallery-image {
+    width: 250px;
+    height: 250px;
+    outline: 20px solid var(--highlight-color);
+    border: 3px solid var(--primary-color);
+    box-sizing: initial;
+}
+
+#section-stranger-things-gallery .gallery-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 10px solid var(--highlight-color);
 }
